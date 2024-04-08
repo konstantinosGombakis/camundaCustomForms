@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "label": "Set Temperature",
+      "type": "number",
+      "layout": {
+        "row": "Row_0t2yv8k",
+        "columns": null
+      },
+      "id": "Field_05lu4gj",
+      "key": "temperature",
+      "defaultValue": 0
+    }
+  ],
+  "type": "default",
+  "id": "set_temperature",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}
