@@ -38,7 +38,7 @@ public class EmailNotifyService implements JavaDelegate {
                     try {
                         email.setFrom("noreply@camunda.org");
                         email.setSubject("IMPORTANT NOTIFICATION");
-                        email.setMsg("Temperature value is high!\n value: " + temperature);
+                        email.setMsg("Temperature value is high!\nValue: " + temperature);
                         email.addTo(recipient);
                         email.send();
 
