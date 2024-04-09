@@ -29,8 +29,8 @@ To run the application:
 2. Access the MailHog email server interface at [http://localhost:8025/](http://localhost:8025/).
 3. Open the Camunda interface at [http://localhost:8080/camunda/](http://localhost:8080/camunda/).
 4. Start the "Task Assignment Email" process within Camunda.
-5. Check your email via MailHog .
-6. Set the temperature value.
+5. Set the temperature value.
+6. Check your email via MailHog for high temperature values.
 
 
 ![Process Diagram](demo-app/src/main/resources/process-diagram.png)
