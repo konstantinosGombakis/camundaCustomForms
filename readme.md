@@ -17,7 +17,9 @@ See files [HERE](./camundaForm/)
 
 # Java 
 ## Introduction
-This is a Java Spring Boot Demo Application as an example of integrating Camunda Forms and TaskListener within a Java Spring Boot framework. It automates a process that triggers an email to the logged-in user, asking them to set a temperature value. The process ends when the user submits the temperature value.
+This is a Java Spring Boot Demo Application as an example of integrating Camunda Forms and TaskListener within a Java Spring Boot framework.
+At the beginning the user sets a temperature value through a user task.
+If the temperature is above 100, the process triggers a service task that automatically sends an email notification to the user who submitted the temperature, informing them of the high temperature condition.
 
 ## Getting Started
 

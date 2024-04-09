@@ -3,25 +3,22 @@ package com.camunda;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
 import org.camunda.bpm.engine.IdentityService;
-import org.camunda.bpm.engine.delegate.DelegateTask;
-import org.camunda.bpm.engine.delegate.TaskListener;
+import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.camunda.bpm.engine.identity.User;
 import org.camunda.bpm.engine.impl.context.Context;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TaskAssignmentListener implements TaskListener {
+public class EmailNotifyService implements JavaDelegate {
     protected static final String HOST = "mail-hog";
     protected static final int PORT = 1025;
+    protected final static Logger LOGGER = LoggerFactory.getLogger(EmailNotifyService.class);
 
-    protected final static Logger LOGGER = LoggerFactory.getLogger(TaskAssignmentListener.class);
+    public void execute(DelegateExecution execution){
 
-    public void notify(DelegateTask delegateTask) {
-
-        String assignee = delegateTask.getAssignee();
-        String taskId = delegateTask.getId();
-        LOGGER.info("assignee '" + assignee);
-        LOGGER.info("taskId '" + taskId);
+        String assignee = (String) execution.getVariable("assignee");
+        Integer temperature = (Integer) execution.getVariable("temperature");
 
         if (assignee != null) {
 
@@ -29,8 +26,6 @@ public class TaskAssignmentListener implements TaskListener {
             User user = identityService.createUserQuery().userId(assignee).singleResult();
 
             if (user != null) {
-
-                // Get Email Address from User Profile
                 String recipient = user.getEmail();
 
                 if (recipient != null && !recipient.isEmpty()) {
@@ -42,13 +37,9 @@ public class TaskAssignmentListener implements TaskListener {
 
                     try {
                         email.setFrom("noreply@camunda.org");
-                        email.setSubject("Task assigned: " + delegateTask.getName());
-                        email.setMsg("Please set temperature value in task : http://localhost:8080/camunda/app/tasklist/default/#/task=" + taskId);
-
+                        email.setSubject("IMPORTANT NOTIFICATION");
+                        email.setMsg("Temperature value is " + temperature);
                         email.addTo(recipient);
-
-                        LOGGER.info(
-                                "Email-------------------------------------- '" + email);
                         email.send();
 
                     } catch (Exception e) {
