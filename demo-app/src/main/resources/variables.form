@@ -1,0 +1,67 @@
+{
+  "components": [
+    {
+      "label": "Weight",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1nl3baw",
+        "columns": null
+      },
+      "id": "Field_1rb6a0j",
+      "key": "weight_in_kilos",
+      "description": "Weight In Kilos",
+      "readonly": true
+    },
+    {
+      "label": "Water",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0i38n7u",
+        "columns": null
+      },
+      "id": "Field_0y4887m",
+      "key": "water",
+      "description": "Water in leters"
+    },
+    {
+      "label": "Indicator",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0mdwwlp",
+        "columns": null
+      },
+      "id": "Field_0x5gnph",
+      "key": "indicator"
+    },
+    {
+      "label": "Calculated Weight",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ltrbt0",
+        "columns": null
+      },
+      "id": "Field_0nhvrv1",
+      "key": "calculated_weight",
+      "readonly": true
+    },
+    {
+      "label": "Accept Variables",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0u8z6rk",
+        "columns": null
+      },
+      "id": "Field_1ky2uac",
+      "key": "accept"
+    }
+  ],
+  "type": "default",
+  "id": "variables",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.1"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 10
+}

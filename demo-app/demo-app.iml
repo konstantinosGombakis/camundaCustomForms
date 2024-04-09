@@ -9,7 +9,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="demo-app" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -91,10 +93,7 @@
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-core:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-runlevel:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:class-model:3.0.5" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-analysis:9.6" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-commons:9.6" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:9.6" level="project" />
-    <orderEntry type="library" name="Maven: org.ow2.asm:asm-util:9.6" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:spring-bridge:3.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.ext:jersey-entity-filtering:3.1.5" level="project" />
@@ -144,5 +143,57 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-email:1.5" level="project" />
     <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.5.6" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-ant:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant:1.10.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant-junit:1.10.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant-launcher:1.10.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ant:ant-antlr:1.10.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-cli-picocli:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: info.picocli:picocli:4.7.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-console:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.25.7" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:32.1.3-jre" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.37.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.21.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:2.8" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-util:9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-analysis:9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ivy:ivy:2.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-datetime:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-docgenerator:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.qdox:qdox:1.12.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-groovydoc:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-groovysh:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: jline:jline:2.14.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-jmx:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-json:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-jsr223:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-macro:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-nio:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-servlet:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-sql:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-swing:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-templates:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-test:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.13.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-test-junit5:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-launcher:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-engine:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.10.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-xml:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.groovy:groovy-yaml:4.0.17" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.3" level="project" />
   </component>
 </module>

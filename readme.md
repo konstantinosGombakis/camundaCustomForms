@@ -28,7 +28,7 @@ To run the application:
 1. Run`docker-compose up` inside demo-app.
 2. Access the MailHog email server interface at [http://localhost:8025/](http://localhost:8025/).
 3. Open the Camunda interface at [http://localhost:8080/camunda/](http://localhost:8080/camunda/).
-4. Start the "Task Assignment Email" process within Camunda.
+4. Start the "Email Notification" process within Camunda.
 5. Set the temperature value.
 6. Check your email via MailHog for high temperature values.
 
@@ -38,4 +38,23 @@ To run the application:
 ![MailHog Example](demo-app/src/main/resources/mailhog-example.png)
 
 ![Form Example](demo-app/src/main/resources/form.png)
+
+## Demo Calculate weight
+1. Run`docker-compose up` inside demo-app.
+2. Access the MailHog email server interface at [http://localhost:8025/](http://localhost:8025/).
+3. Open the Camunda interface at [http://localhost:8080/camunda/](http://localhost:8080/camunda/).
+4. Start the "Weight In Kilos" process within Camunda.
+5. Set the form values.
+6. If you don't accept check again the values.
+7. When you accept an email should send.
+8. Process ends
+
+![Process Diagram](demo-app/src/main/resources/calculate-weight-process.png)
+
+![Variables Form](demo-app/src/main/resources/variables-form.png)
+
+
+
+
+
 
