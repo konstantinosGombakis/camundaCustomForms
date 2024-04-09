@@ -15,7 +15,7 @@ public class EmailNotifyService implements JavaDelegate {
     protected static final int PORT = 1025;
     protected final static Logger LOGGER = LoggerFactory.getLogger(EmailNotifyService.class);
 
-    public void execute(DelegateExecution execution){
+    public void execute(DelegateExecution execution) {
 
         String assignee = (String) execution.getVariable("assignee");
         Integer temperature = (Integer) execution.getVariable("temperature");
@@ -38,7 +38,7 @@ public class EmailNotifyService implements JavaDelegate {
                     try {
                         email.setFrom("noreply@camunda.org");
                         email.setSubject("IMPORTANT NOTIFICATION");
-                        email.setMsg("Temperature value is " + temperature);
+                        email.setMsg("Temperature value is high!\n value: " + temperature);
                         email.addTo(recipient);
                         email.send();
 
