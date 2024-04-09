@@ -20,20 +20,13 @@ public class TaskAssignmentListener implements TaskListener {
 
         String assignee = delegateTask.getAssignee();
         String taskId = delegateTask.getId();
-        LOGGER.info(
-                "assignee '" + assignee);
-        LOGGER.info(
-                "taskId '" + taskId);
+        LOGGER.info("assignee '" + assignee);
+        LOGGER.info("taskId '" + taskId);
 
         if (assignee != null) {
 
             IdentityService identityService = Context.getProcessEngineConfiguration().getIdentityService();
             User user = identityService.createUserQuery().userId(assignee).singleResult();
-
-            LOGGER.info(
-                    "user '" + user);
-
-
 
             if (user != null) {
 
