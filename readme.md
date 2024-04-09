@@ -33,7 +33,7 @@ To run the application:
 
 ![Process Diagram](demo-app/src/main/resources/process-diagram.png)
 
-![MailHog Example](demo-app/src/main/resources/mail-hog-example.png)
+![MailHog Example](demo-app/src/main/resources/mailhog-example.png)
 
 ![Form Example](demo-app/src/main/resources/form.png)
 

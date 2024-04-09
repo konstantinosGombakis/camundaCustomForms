@@ -10,12 +10,24 @@
         <camunda:taskListener class="com.camunda.TaskAssignmentListener" event="assignment" />
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
-      <bpmn2:outgoing>Flow_14nbik5</bpmn2:outgoing>
+      <bpmn2:incoming>Flow_0hcfl6h</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1jri3ua</bpmn2:outgoing>
     </bpmn2:userTask>
     <bpmn2:endEvent id="EndEvent_2" name="End Event">
-      <bpmn2:incoming>Flow_14nbik5</bpmn2:incoming>
+      <bpmn2:incoming>Flow_06auzvq</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="Flow_14nbik5" sourceRef="UserTask_1" targetRef="EndEvent_2" />
+    <bpmn2:exclusiveGateway id="Gateway_1l0amo5">
+      <bpmn2:incoming>Flow_1jri3ua</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_06auzvq</bpmn2:outgoing>
+      <bpmn2:outgoing>Flow_0hcfl6h</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:sequenceFlow id="Flow_1jri3ua" sourceRef="UserTask_1" targetRef="Gateway_1l0amo5" />
+    <bpmn2:sequenceFlow id="Flow_06auzvq" name="temperature &#62;100" sourceRef="Gateway_1l0amo5" targetRef="EndEvent_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${temperature&gt;100}</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="Flow_0hcfl6h" name="temperature&#60;100" sourceRef="Gateway_1l0amo5" targetRef="UserTask_1">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${temperature&lt;100}</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1" name="Task Assignment Email">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="TaskAssignmentEmail">
@@ -25,15 +37,18 @@
           <dc:Bounds x="158" y="143" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_10" bpmnElement="EndEvent_2">
-        <dc:Bounds x="472" y="107" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="465" y="148" width="52" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_UserTask_2" bpmnElement="UserTask_1">
         <dc:Bounds x="290" y="85" width="100" height="80" />
         <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1l0amo5_di" bpmnElement="Gateway_1l0amo5" isMarkerVisible="true">
+        <dc:Bounds x="485" y="100" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_10" bpmnElement="EndEvent_2">
+        <dc:Bounds x="672" y="107" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="665" y="148" width="52" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="_BPMNShape_StartEvent_2" targetElement="_BPMNShape_UserTask_2">
         <di:waypoint x="203" y="125" />
@@ -42,9 +57,25 @@
           <dc:Bounds x="108" y="75" width="0" height="0" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_14nbik5_di" bpmnElement="Flow_14nbik5">
+      <bpmndi:BPMNEdge id="Flow_1jri3ua_di" bpmnElement="Flow_1jri3ua">
         <di:waypoint x="390" y="125" />
-        <di:waypoint x="472" y="125" />
+        <di:waypoint x="485" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06auzvq_di" bpmnElement="Flow_06auzvq">
+        <di:waypoint x="535" y="125" />
+        <di:waypoint x="672" y="125" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="560" y="107" width="87" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hcfl6h_di" bpmnElement="Flow_0hcfl6h">
+        <di:waypoint x="510" y="150" />
+        <di:waypoint x="510" y="240" />
+        <di:waypoint x="340" y="240" />
+        <di:waypoint x="340" y="165" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="383" y="222" width="84" height="14" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

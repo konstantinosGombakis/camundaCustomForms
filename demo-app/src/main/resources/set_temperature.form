@@ -9,7 +9,8 @@
       },
       "id": "Field_1smy0x2",
       "key": "temperature",
-      "description": "set temperature value"
+      "description": "set temperature value",
+      "defaultValue": 0
     }
   ],
   "type": "default",
