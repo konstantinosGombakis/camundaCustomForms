@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "label": "Set temperature",
+      "type": "number",
+      "layout": {
+        "row": "Row_1yv88t0",
+        "columns": null
+      },
+      "id": "Field_1rfid6x",
+      "key": "set_temperature",
+      "readonly": true
+    }
+  ],
+  "type": "default",
+  "id": "calculations_form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.2.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.15.0"
+  },
+  "schemaVersion": 10
+}

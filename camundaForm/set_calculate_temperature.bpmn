@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0nck8az" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.15.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.19.0">
+  <bpmn:process id="Set_calculate_temperature_via_Form" isExecutable="true" camunda:historyTimeToLive="10">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0aeockn</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0aeockn" sourceRef="StartEvent_1" targetRef="Activity_035g8d8" />
+    <bpmn:userTask id="Activity_035g8d8" name="Seting Temperature" camunda:formRef="set_temperature" camunda:formRefBinding="deployment">
+      <bpmn:incoming>Flow_0aeockn</bpmn:incoming>
+      <bpmn:incoming>Flow_1g4o3p2</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ma195g</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1ma195g" sourceRef="Activity_035g8d8" targetRef="Gateway_0bv6ima" />
+    <bpmn:endEvent id="Event_1gl34vo">
+      <bpmn:incoming>Flow_1la04mu</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_17dg3b9" name="temperature&#62;100" sourceRef="Gateway_0bv6ima" targetRef="Activity_1m17zs3">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${temperature&gt;100}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="Gateway_0bv6ima">
+      <bpmn:incoming>Flow_1ma195g</bpmn:incoming>
+      <bpmn:outgoing>Flow_17dg3b9</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1g4o3p2</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1g4o3p2" name="temperature&#60;100" sourceRef="Gateway_0bv6ima" targetRef="Activity_035g8d8">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${temperature&lt;100}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:serviceTask id="Activity_1m17zs3" name="Calculations" camunda:expression="${temperature*1.251}" camunda:resultVariable="set_temperature">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="Input_2cm2pki" />
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_17dg3b9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ojwohn</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0ojwohn" sourceRef="Activity_1m17zs3" targetRef="Activity_1ft0lj5" />
+    <bpmn:sequenceFlow id="Flow_1la04mu" sourceRef="Activity_1ft0lj5" targetRef="Event_1gl34vo" />
+    <bpmn:userTask id="Activity_1ft0lj5" name="Show calculation form" camunda:formRef="calculations_form" camunda:formRefBinding="latest">
+      <bpmn:extensionElements />
+      <bpmn:incoming>Flow_0ojwohn</bpmn:incoming>
+      <bpmn:outgoing>Flow_1la04mu</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Set_calculate_temperature_via_Form">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0eb6mot_di" bpmnElement="Activity_035g8d8">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_04v22ui_di" bpmnElement="Gateway_0bv6ima" isMarkerVisible="true">
+        <dc:Bounds x="425" y="92" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xszprt_di" bpmnElement="Activity_1m17zs3">
+        <dc:Bounds x="660" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ftmctn_di" bpmnElement="Activity_1ft0lj5">
+        <dc:Bounds x="840" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1gl34vo_di" bpmnElement="Event_1gl34vo">
+        <dc:Bounds x="1092" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0aeockn_di" bpmnElement="Flow_0aeockn">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ma195g_di" bpmnElement="Flow_1ma195g">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="425" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17dg3b9_di" bpmnElement="Flow_17dg3b9">
+        <di:waypoint x="475" y="117" />
+        <di:waypoint x="660" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="511" y="99" width="84" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1g4o3p2_di" bpmnElement="Flow_1g4o3p2">
+        <di:waypoint x="450" y="142" />
+        <di:waypoint x="450" y="240" />
+        <di:waypoint x="320" y="240" />
+        <di:waypoint x="320" y="157" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="343" y="222" width="84" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ojwohn_di" bpmnElement="Flow_0ojwohn">
+        <di:waypoint x="760" y="117" />
+        <di:waypoint x="840" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1la04mu_di" bpmnElement="Flow_1la04mu">
+        <di:waypoint x="940" y="117" />
+        <di:waypoint x="1092" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
