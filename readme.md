@@ -14,6 +14,10 @@ See files [HERE](./camundaForm/)
 
 ![quick_demo](./camundaForm/camunda_form.gif)
 
+# Camunda form with mathematical calculations
+
+Extened the previous demo, to include an mathematical calculation and present it to the user.
+See ./camundaForm/set_calculate_temperature.bpmn
 
 # Java 
 ## Introduction
@@ -25,7 +29,7 @@ If the temperature is above 100, the process triggers a service task that automa
 
 To run the application:
 
-1. Run`docker-compose up` inside demo-app.
+1. Run `docker-compose up` inside demo-app.
 2. Access the MailHog email server interface at [http://localhost:8025/](http://localhost:8025/).
 3. Open the Camunda interface at [http://localhost:8080/camunda/](http://localhost:8080/camunda/).
 4. Start the "Email Notification" process within Camunda.
@@ -40,7 +44,7 @@ To run the application:
 ![Form Example](demo-app/src/main/resources/form.png)
 
 ## Demo Calculate weight
-1. Run`docker-compose up` inside demo-app.
+1. Run `docker-compose up` inside demo-app.
 2. Access the MailHog email server interface at [http://localhost:8025/](http://localhost:8025/).
 3. Open the Camunda interface at [http://localhost:8080/camunda/](http://localhost:8080/camunda/).
 4. Start the "Weight In Kilos" process within Camunda.
