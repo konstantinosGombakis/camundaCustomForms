@@ -5,9 +5,17 @@ services:
     build: .
     ports:
       - "8080:8080"
+    networks:
+      - mpms-demo
 
   mail-hog:
     image: mailhog/mailhog
     ports:
       - "1025:1025"
       - "8025:8025"
+    networks:
+      - mpms-demo
+
+
+networks:
+  mpms-demo:
