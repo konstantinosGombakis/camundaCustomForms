@@ -60,6 +60,10 @@ To run the application:
 ## Basic Authentication/Rest API
 
 When deploying from camunda modeler, specify the **username** and **password**!
+```text
+Username:eurodyn
+Password:eurodyn
+```
 
 ![Authentication](demo-app/src/main/resources/authentication.png)
 
