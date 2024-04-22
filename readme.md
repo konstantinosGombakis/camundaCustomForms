@@ -57,7 +57,11 @@ To run the application:
 
 ![Variables Form](demo-app/src/main/resources/variables-form.png)
 
+## Basic Authentication/Rest API
 
+When deploying from camunda modeler, specify the **username** and **password**!
+
+![Authentication](demo-app/src/main/resources/authentication.png)
 
 
 
