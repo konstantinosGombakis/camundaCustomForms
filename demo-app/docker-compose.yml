@@ -1,8 +1,10 @@
 version: '3.8'
 
 services:
-  app-container:
+  mpms:
     build: .
+    hostname: mpms
+    container_name: mpms
     ports:
       - "8080:8080"
     networks:
@@ -10,6 +12,8 @@ services:
 
   mail-hog:
     image: mailhog/mailhog
+    hostname: mail-hog
+    container_name: mail-hog
     ports:
       - "1025:1025"
       - "8025:8025"
